@@ -1,0 +1,264 @@
+Rajesh Kumar
+======================================
+9:00 AM - 5:00 PM IST
+======================================
+1:00 PM - 2:00 PM - LUNCH
+11:00 AM - 15 mins 
+3.30 PM - 15 mins 
+===================================
+Lab infra - Cloud AWS - AZURE
+===================================
+DEMO
+LAB - 
+Assignment ->
+===================================
+8105843520
+--------------------------------------
+What is Docker?
+-------------------------
+	TOOL - A PLATFORM
+	- Container mgmt 
+
+	Writtin in Go lang
+	
+	Soloman Hykes
+	
+	Release
+	- Community  - AS PART of Session
+	- Enterprise	
+	https://www.devopsschool.com/blog/what-is-docker-enterprise-3-0-detailed-exaplanations/
+	https://www.devopsschool.com/blog/difference-between-docker-community-edition-ce-vs-docker-enterprise-edition-ee-in-2020/
+
+	version
+	20.X
+
+
+	What is Tool? 
+	- SAVING Cost
+		--> You run apps and Save Resources(cpu+ram+storage+os)
+				in Datacenter
+	- SAVING TIME
+		--> 1 hours ---> 5 mins -> 1 sec
+	- Imp* eff*
+		--> 
+
+	1 HOURS ---> 5 MINS --> 1 SEC???????
+	10 GB for - 10 APPS
+	10 GB for - 50 APPS???????
+
+	What is a Container?
+	is a init of 
+			1 USER from USER NS from KERNAL
+			1 MNT from MNT NS from KERNAL
+			1 NET from NET NS from KERNAL
+			1 PID from PID from KERNAL
+
+		ATTACHED USER WITH NET - PID - MNT=== ONE CONTAINER
+
+	Independent RUN TIME ENV for RUNNING ANY APP.
+	HARDWARE-> KERNAL -> ROOT -> APP
+	---------------------------------
+			NET
+			PID
+			MNT	ROOT FS
+			USER
+
+What are the resources we need to RUN ONE APP?
+---------------------------------------------
+Hardware
+	-> OS
+	     -> kernel			NEED4-1APP	CAN BY KERNAL		ALLOWED by OS
+			PID ID		1		MULTIPLE		1
+			USER		1		MULTIPLE		MULTIPLE		
+			FILESYSTEM	1		MULTIPLE		1	
+			Network		1		MULTIPLE		1	
+			CPU
+			RAM
+
+		NAMESPACE
+	     -> kernel			FROM NAMESPACE
+			PID		PID
+			USER		USR
+			ROOT FILESYSTEM	MNT	
+			Network		NET
+			
+		
+		CGROUPS	- Manging CPU and RAM for HOST MACHINE
+
+
+		Capabilites - IT assign ACCESS TO USER
+			
+
+
+
+
+
+
+Kernel
+The kernel is a computer program at the core of a computer's operating system and has complete control over everything in the system. It is the "portion of the operating system code that is always resident in memory", and facilitates interactions between hardware and software components.
+
+FILESYSTEM
+--------------
+Collection of files & dir --- FOR SOME PURPOSE.
+
+BOOT FS 	-> ROOT FS -> USER FS -> APP FS 
+---------------------------------------
+KERNAL		-> UBUNTU -> root -> ls, java, tomcat, jenkins
+LINUX		-> CENTOS
+WIN
+
+jenkins -> Tomcat -> JAVA -> ROOT FS --> BOOTFS
+---------------------------
+	 APP			RFS       BFS
+
+----------------------------------------------
+		USER
+
+WHY???
+OS ALLOWED only 
+1 NET
+1 PID
+1 MNT
+MUL USER
+-----------------------------
+PC -> HUMAN -> So we can run and consume app easily
+
+
+EVOLUTION OF COMPUTING
+=====================================================================================
+PSHYCIAL SERVER			VIRTUAL SERVER			????
+BEFORE INTERNET			INTERNET INTRO
+
+===============================================
+Docker Arch
+Docker Components
+Container Lifecycle?
+How to install Docker
+
+=============================================================
+Docker Arch
+--------------------------------------------
+Human -> Docker client -----REST-----> Docker Deamon -> ContainerD ----> Kernal
+         -----------------------------------------
+			Docker Engine
+
+
+Docker Components
+=============================================
+1. Docker Engine
+
+2. Docker Image
+Contains.
+		MULTIPLE FILE SYSTEM
+
+--------------
+ROOT FS + USER FS + APP FS + + APP FS + + APP FS
+-----------------------------------------
+CENTOS + APACHE + JAVA+TOMCAT+JENKINS
+
+FROM ONE IMAGE - YOU CAN CREATE MULTIPLE CONTAINER
+1 COPY OF IMAGE- GET MOUNTED INTO EACH CONTAINER
+
+VM images
+-------------------------
+Contains.
+--------------
+BOOT FS + ROOT FS + USER FS + APP FS
+-----------------------------------------
+KERNAL + CENTOS + APACHE + JAVA+TOMCAT+JENKINS
+
+
+3. Docker Registry
+		contains 
+			Repository
+				container 
+					version of file system
+
+public
+	hub.docker.com
+		repository(aka imagename)
+			collection of filesystemS(ROOT + USER + APP)
+	google reg
+	azure
+	ecr
+pvt
+	artifactory
+	nexus
+	docker registry
+
+4 Container
+
+THE moment - run docker image ---
+					1 NETWORK IS Initialized 	FROm NET NS
+					1 PID is Initialized		FROm PID NS
+					1 USER is Initialized		FROm USER NS
+
+					1 MNT is Initialized		FROm MNT NS
+									using 1 COPY OF IMAGE.
+
+	
+	docker clinet ---> docker server --> containerd ---> kernal -> ns + cgroup + capa
+			--------------------------------------------------------
+			USER iS ATTACHED TO SAME NET - SAME PID - SAME MNT
+			===================================================
+						Container				
+
+java -> rootrf -> bootfs
+jenkins -> tomcat -> java -> rootfd -> bootfs
+jira > tomcat -> java -> rootfs -> bootfs
+tocmat -> java -> rootfs -> bootfs
+=====================================================================
+
+===========================================================
+Container Lifecycle?
+===========================================================
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+===========================================================
+vms Lifecycle?
+===========================================================
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+Other container runtime interface 
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+=====================================================================================
+How to install Docker?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Pre-Training Assesment: 
+https://lndcloud.springpeople.com/training_class/auto-assign/b90b1645-98c9-4ecf-aa3c-8ff4755bdac6
+============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
