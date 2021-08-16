@@ -469,6 +469,163 @@ https://www.bestdevops.com/assignment-for-docker-day-1/
 
 
 
+What is the diff between docker pause and docker unpause?
+
+This is my ansswer 1 .. This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1
+
+
+docker command
+docker command
+docker command
+docker command
+docker command
+docker command
+
+
+
+What is the diff between docker stop and docker kill?
+
+This is my ansswer 1 .. This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1This is my ansswer 1
+
+docker command
+docker command
+docker command
+docker command
+docker command
+docker command
+
+=================================================================================
+
+
+How to use VM?
+--------------------------
+RULES OF PID1 (LINUX)
+----------------------------------------------------------------------
+PHYSICAL SERVER IS RUNNING	VM SERVER IS RUNNING		Container IS RUNNING			
+WHY?				WHY?				WHY?
+COZ OF PID1 is running		COZ OF PID1 is running		COZ OF PID1 is running
+
+PID1 IS SYSTEMD			PID1 IS SYSTEMD			ANYTHING
+								x
+								y
+								z
+								java pythng bash script 
+
+
+
+How to use Containers?
+--------------------------
+GO INSIDE
+
+exec
+		Would execute An executable INSIDE a container
+		BUT with -it and SHELL(bash) you can go inside a container
+attach
+		YOU GET ATTACHED TO A CONTAINER OF PID 1.
+
+  124  docker ps -a
+  125  docker exec 69519068eac0 ls
+  126  docker exec 69519068eac0 ps -eaf
+  127  clear
+  128  docker exec 69519068eac0 df -kh
+  129  docker exec 69519068eac0 ls /opt/
+  130  docker exec 69519068eac0 ls /tmp
+  131  clear
+  132  docker ps
+  133  docker exec -it 69519068eac0 /bin/bash
+  134  docker ps
+  135  clear
+  136  ls
+  137  ps -eaf
+  138  clear
+  139  docker ps
+  140  docker create jenkins/jenkins
+  141  docker ps
+  142  docker ps -a
+  143  docker start 750899e4aee3 49eeb7a95ee1
+  144  clear
+  145  docker ps
+  146  docker exec -it 750899e4aee3 /bin/bash
+  147  docker ps -a
+  148  clear
+  149  docker ps -a
+  150  docker exec -it 49eeb7a95ee1 /bin/bash
+  151  docker ps
+  152  docker exec -it 49eeb7a95ee1 /bin/bash
+  153  docker ps -a
+  154  docker exec -it 69519068eac0 /bin/bash
+  155  ps -eaf
+  156  clea
+  157  clear
+  158  docker ps -a
+  159  clear
+  160  docker run ubuntu ls
+  161  docker ps -a
+  162  clear
+  163  ls
+  164  clear
+  165  docker help
+  166  clear
+  167  docker ps
+  168  docker ps -a
+  169  docker start 7f2f20f23b13 49eeb7a95ee1 69519068eac0 750899e4aee3
+  170  clear
+  171  docker ps
+  172  docker ps -a
+  173  clea
+  174  celar
+  175  clea
+  176  lear
+  177  clear
+  178  docker ps
+  179  docker attach 49eeb7a95ee1
+  180  docker ps -a
+  181  clear
+  182  docker ps -a
+  183  docker attach 69519068eac0
+  184  clear
+
+
+Assignment#1
+-------------------------
+What is the advantage and disadvantage of the container?
+-------------
+Write in 10 POINTS
+
+
+
+ACCESS FROM OUTSIDE using IP
+==============================================
+
+--------------------------
+TASK 2 - YOU Write a EASSEY?
+
+
+TASK 1 - A - B  - ---GRAMMER --- WORD =-=> ESSEY
+	container    docker image	docker compose ---> k8s
+------------------
+Docker 1- 2 Days
+K8s -3 Days
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 
