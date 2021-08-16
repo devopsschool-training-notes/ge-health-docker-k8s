@@ -219,8 +219,7 @@ vms Lifecycle?
 ===========================================================
 create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
 
-Other container runtime interface 
-https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
 
 =====================================================================================
 How to install Docker?
@@ -250,15 +249,226 @@ https://lndcloud.springpeople.com/training_class/auto-assign/b90b1645-98c9-4ecf-
 
 
 
+https://github.com/devopsschool-training-notes/ge-health-docker-k8s
+
+- Other container runtime interface 
+https://www.devopsschool.com/blog/list-of-top-container-runtime-interface-projects/
+
+- Docker Commmunity & Enterprise	1
+- Docker Commmunity & Enterprise	2
+
+	https://www.devopsschool.com/blog/what-is-docker-enterprise-3-0-detailed-exaplanations/
+	https://www.devopsschool.com/blog/difference-between-docker-community-edition-ce-vs-docker-enterprise-edition-ee-in-2020/
+============================
+
+How to register? - https://www.bestdevops.com/wp-login.php?action=register
+How to login? - https://www.bestdevops.com/wp-login.php
+How to submit assignment post? - https://www.bestdevops.com/wp-admin/post-new.php
+
+
+
+jenkins -> tomcat -> java -> rootfd -> bootfs
+					HOST
+
+
+jenkins
+	FROM TOMCAT 
+		FROM JAVA				
+			FROM UBUNTU
+				FROM /
+
+
+subhash.choudhary@ge.com	15.206.189.101
+john.a@ge.com			13.233.137.249
+niketa.agarwal@ge.com		13.235.91.136
+Ranjan.KP@ge.com		3.108.250.157
+adhithyan.s@ge.com		52.66.239.140
+samir.mewada@geind.ge.com	13.127.72.17
+saurav.kumar12@ge.com		3.108.65.144
+chekkizharpandiyan@ge.com	3.7.73.227
+Prateek.Kembhavi@ge.com		65.0.110.183
+karthikkumar.sathyanarayana@ge.com	65.0.7.146
+parul.arora@ge.com		3.108.65.159
+pabitra.lenka@ge.com		65.1.130.117
+Prema				65.1.106.249	
+Amit				13.232.42.42		
+				
+===============================================
+
+How to install Docker & verify a Docker and getting started?
+https://devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
+- physical 
+- vm
+- docker need root OR user need to be a part of group called "docker"
+
+   1  clear
+    2  ls
+    3  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+    4  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo yum install –y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    6  sudo yum-config-manager --enable rhui-REGION-rhel-server-extras
+    7  sudo yum install -y docker-ce
+    8  sudo yum install docker-ce
+    9  docker -v
+   10  docker -h
+   11  clear
+   12  ls
+   13  docker info
+   14  sudo systemctl enable docker
+   15  sudo systemctl start docker
+   16  docker info
+   17  clear
+   18  docker version
+   19  clear
+   20  history
+
+   23  which docker
+   24  ps -eaf | grep docker
+   25  ps -eaf | grep containerd
+
+
+
+PROOVE IT....
+THE moment - run docker image ---
+					1 NETWORK IS Initialized 	FROm NET NS
+					1 PID is Initialized		FROm PID NS
+					1 USER is Initialized		FROm USER NS
+
+					1 MNT is Initialized		FROm MNT NS
+									using 1 COPY OF IMAGE.
+
+	
+	docker clinet ---> docker server --> containerd ---> kernal -> ns + cgroup + capa
+			--------------------------------------------------------
+			USER iS ATTACHED TO SAME NET - SAME PID - SAME MNT
+			===================================================
+						Container				
+
+
+  23  which docker
+   24  ps -eaf | grep docker
+   25  ps -eaf | grep containerd
+   26  history
+   27  clear
+   28  ps
+   29  ps -eaf | grep 8561
+   30  ps -eaf | grep 8559
+   31  ps -eaf | grep 8539
+   32  ps -eaf | grep 8538
+   33  ps -eaf | grep 8535
+   34  ps -eaf | grep 8535
+   35  ps -eaf | grep 1205
+   36  ps -eaf
+   37  clear
+   38  docker run -itd ubuntu
+   39  docker run -itd ubuntu
+   40  docker ps
+   41  clear
+   42  docker ps
+   43  docker exec 6dc37b651681 ps -eaf
+   44  ps -eaf
+   45  clear
+   46  docker exec 6dc37b651681 ps -eaf
+   47  docker exec 6dc37b651681 ps -eaf
+   48  docker ps
+   49  docker exec dfa4a71a1279 ps -eaf
+   50  clear
+   51  ls
+   52  ps -eaf | grep docker
+   53  ps -eaf | grep containerd
+   54  docker run -itd ubuntu
+   55  ps -eaf | grep containerd
+   56  clear
+   57  docker exec dfa4a71a1279 ps -eaf
+   58  df -kh
+   59  docker ps
+   60  ls /var/lib/docker/overlay2/d5b08bf18103a10f691af8c1b696241a911573c26b3fe8ea81b89b25fe766e26/merged
+   61  ls /
+   62  df -kh
+   63  docker ps
+   64  docker exec dfeb2027526b df -kh
+   65  clear
+   66  docker ps
+   67  docker inspect dfeb2027526b | grep -i ip
+   68  docker inspect 6dc37b651681 | grep -i ip
+   69  history
+
+
+Working with Container lifecycle?
+
+===========================================================
+Container Lifecycle?
+===========================================================
+create -> start -> stop -> start -> restart -> pause -> unpause -> kill -> remove
+
+
+jenkins
+	- java based
+	- 8080
+	----------
+
+jenkins -> tomcat -> java -> base root fs -> boot
+------------------------------------------
+	IMAGE
+
+
+ 71  docker images
+   72  docker images
+   73  docker pull jenkins
+   74  clear
+   75  docker pull jenkins/jenkins
+   76  clear
+   77  docker images
+   78  clear
+   79  docker ps
+   80  docker ps -a
+   81  docker create jenkins/jenkins
+   82  docker ps -a
+   83  docker create jenkins/jenkins
+   84  docker create jenkins/jenkins
+   85  docker ps -a
+   86  clear
+   87  docker ps -a
+   88  docker start bfbcc9298bed
+   89  docker ps -a
+   90  clear
+   91  docker stop bfbcc9298bed
+   92  docker ps -a
+   93  docker stop dfeb2027526b 6dc37b651681 dfa4a71a1279
+   94  clear
+   95  docker ps -a
+   96  docker start bfbcc9298bed
+   97  docker ps -a
+   98  clear
+   99  docker ps
+  100  docker restart bfbcc9298bed
+  101  docker ps
+  102  docker pause bfbcc9298bed
+  103  docker pause bfbcc9298bed
+  104  docker ps
+  105  docker pause bfbcc9298bed
+  106  docker ps
+  107  clear
+  108  docker unpause bfbcc9298bed
+  109  docker ps
+  110  docker kill bfbcc9298bed
+  111  docker ps
+  112  docker ps -a
+  113  docker rename bfbcc9298bed dev1
+  114  docker ps -a
+  115  docker rm dev1
+  116  docker ps
+  117  docker ps -a
+  118  clear
+  119  history
+=========================================================================
+Assignment for Docker - Day 1
+==========================================
+https://www.bestdevops.com/assignment-for-docker-day-1/
 
 
 
 
 
-
-
-
-
-
-
+	
 
