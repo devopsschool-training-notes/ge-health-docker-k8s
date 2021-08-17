@@ -173,5 +173,51 @@ Assignment Day 2  - Explain docker update & docker wait commands with example
 update	Update configuration of one or more containers
 wait	Block until one or more containers stop, then print their exit codes
 
+========================================================================
+How to monitor Containers?
+-------------------------------------------
+
+ 397  docker ps
+  398  docker ps -a
+  399  docker inspect 465d9c332e13
+  400  clear
+  401  docker ps
+  402  docker logs f7720c0bfe4f
+  403  clear
+  404  docker logs f7720c0bfe4f
+  405  clear
+  406  clear
+  407  docker ps
+  408  docker logs f7720c0bfe4f
+  409  clear
+  410  clear
+  411  docker stats
+  412  docker stats f7720c0bfe4f
+  413  clear
+  414  docker ps
+  415  ps -eaf | grep containerd
+  416  docker top f7720c0bfe4f
+  417  docker exec f7720c0bfe4f ps -eaf
+  418  clear
+  419  docker events
+  420  docker events
+
+Assignment?
+How to get a logs written of the docker server in some file?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
