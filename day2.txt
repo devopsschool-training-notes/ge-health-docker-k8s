@@ -440,8 +440,52 @@ COPY devopsschool.py /tmp/devopsschool.py
 Req - 
 Base - ubuntu
 git - apache2 - update - somefile
+============================================================================================
+How to Share an Image?
+==================================================
+Method 1 - using Tar ball
+
+ 649  docker images
+  650  docker save -o raju1.tar raju1
+  651  ls
+  652  docker rmi raju1
+  653  docker ps -a
+  654  docker stop 07d76dbf4646
+  655  docker rm 07d76dbf4646
+  656  clar
+  657  clear
+  658  docker rmi raju1
+  659  clear
+  660  docker images
+  661  ls
+  662  docker load -i raju1.tar
+  663  docker images
 
 
+Method 2 - Using Registry (hub.docker.com)
+
+Step 1 - login/register at hub.docker.com
+Step 2 - login and create a repo
+Step 3 - docker login
+Step 4 - MAKE sure your name MUST match with Local image name
+Step 5 - docker push
+
+ 663  docker images
+  664  history
+  665  clear
+  666  docker login
+  667  docker login
+  668  docker logout
+  669  clear
+  670  docker login
+  671  docker images
+  672  docker tag raju1 devopsschools/tuesaug
+  673  docker images
+  674  docker push devopsschools/tuesaug
+  675  docker tag raju1 devopsschools/tuesaug:v2
+  676  docker push devopsschools/tuesaug:v2
+  677  docker images
+  678  history
 
 
 
