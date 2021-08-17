@@ -1,3 +1,5 @@
+List of Commands - https://devopsschool.com/tutorial/docker/commands/
+
 subhash.choudhary@ge.com	13.233.122.123
 john.a@ge.com			3.6.126.52
 niketa.agarwal@ge.com		52.66.241.128
@@ -12,4 +14,164 @@ parul.arora@ge.com		13.233.151.142
 pabitra.lenka@ge.com		15.206.210.54
 Prema				52.66.239.86
 Amit				13.126.52.79
-				
+=========================================================
+docker version
+docker exec
+docker info
+docker pull
+docker start
+docker inspect
+docker ps
+docker stat
+docker pause
+docker rename
+docker run
+docker stop
+docker kill
+docker unpause
+docker attach
+docker images
+docker rm
+docker create
+docker kill
+docker restart
+docker create
+==========================================================
+RUN
+----------------------------------
+pull + create + start + attach(you get attached to PID1)
+
+
+RUN -d
+----------------------------------
+pull + create + start + do not attach(you do not get attached to PID1)
+
+
+
+  287  docker info
+  288  clear
+  289  docker ps
+  290  clear
+  291  docker images
+  292  docker run jenkins/jenkins
+  293  docker ps -a
+  294  clear
+  295  docker run -d jenkins
+  296  docker run -d jenkins/jenkins
+  297  docker ps
+  298  docker run -d jenkins/jenkins
+  299  docker ps
+  300  clear
+  301  ls
+  302  docker ps
+  303  ls
+  304  touch devopsschool.txt
+  305  ls
+  306  docker cp devopsschool.txt 40ec58a887f0:/tmp
+  307  docker exec 40ec58a887f0 ls /tmp
+  308  clear
+  309  ls
+  310  rm -rf devopsschool.txt
+  311  docker cp 40ec58a887f0:/tmp/devopsschool.txt .
+  312  ls
+  313  docker help cp
+  314  clear
+  315  ls
+  316  history
+
+  316  history
+  317  docker help run
+  318  clear
+  319  docker help start
+  320  docker help create
+
+
+diff	Inspect changes to files or directories on a container's filesystem
+----------------------------------------------------------------------
+Since you created a container
+---
+ADD
+CHNAGED
+DELETED
+	you can see using diff command line.
+
+[root@ip-172-31-14-110 centos]# docker diff 07c851cd4f6f
+C /etc
+C /etc/issue.net
+A /etc/rajesh.txt
+D /etc/gshadow
+[root@ip-172-31-14-110 centos]#
+
+
+
+
+
+CTRL + P + Q
+
+  330  docker ps
+  331  clear
+  332  docker run ubuntu
+  333  docker ps -a
+  334  ls
+  335  clear
+  336  bash
+  337  docker ps -a
+  338  clear
+  339  docker run -it ubuntu
+  340  docker ps -a
+  341  clear
+  342  docker run -it ubuntu
+  343  docker ps
+  344  clear
+  345  docker run -itd ubuntu
+  346  docker ps
+  347  docker run -itd ubuntu
+  348  docker ps
+  349  docker run -itd ubuntu
+  350  docker ps
+  351  clear
+  352  docker ps
+
+
+docker run -d -p 8080:8080 jenkins/jenkins
+docker run -d -p 8090:8080 jenkins/jenkins
+
+8080:8080
+NODEPORT:ContainerPORT
+
+ 361  docker ps
+  362  docker inspect 40ec58a887f0
+  363  clear
+  364  ping 172.17.0.3
+  365  curl http://172.17.0.3:8080
+  366  clear
+  367  ls
+  368  docker ps
+  369  docker kill $(docker ps -q)
+  370  docker rm $(docker ps -a -q)
+  371  clear
+  372  docker ps -a
+  373  clear
+  374  docker run -d -p 8080:8080 jenkins/jenkins
+  375  docker ps
+  376  docker run -d jenkins/jenkins
+  377  docker ps
+  378  docker run -d -p 8090:8080 jenkins/jenkins
+  379  docker ps
+  380  clear
+  381  docker run -d -p 8080:8080 jenkins/jenkins
+  382  docker ps
+  383  docker ports a452dd838efc
+  384  docker port a452dd838efc
+  385  docker port d28b65c987d8
+
+
+
+
+Assignment Day 2  - Explain docker update & docker wait commands with example 
+----------------Write a post on this.---------------------------------
+update	Update configuration of one or more containers
+wait	Block until one or more containers stop, then print their exit codes
+
+
+
