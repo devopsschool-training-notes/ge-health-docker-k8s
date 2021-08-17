@@ -294,6 +294,154 @@ Docker images?
 Assignment....
 Title - Define a docker image in 10 bullets points.
 Share a post with me.
+=============================================================
+How to create an image?
+----------------------------
+Method - 1 - Lazy way - Manual way - Using Container
+- One layer each time.
+
+ 513  docker run -itd ubuntu
+  514  docker ps
+  515  df -kh
+  516  clear
+  517  docker ps
+  518  docker attach e797ed7d7709
+  519  docker ps
+  520  cd
+  521  clear
+  522  ls
+  523  vi devopsschool.py
+  524  ls
+  525  docker cp devopsschool.py e797ed7d7709:/tmp
+  526  docker exec e797ed7d7709 git
+  527  clear
+  528  docker exec e797ed7d7709 which apache2
+  529  docker exec e797ed7d7709 ls /tmp
+  530  docker images
+  531  docker history ubuntu
+  532  docker ps
+  534  docker commit -m"up-git-apache-file" -a"Rajesh kumar"  e797ed7d7709 up-git-apache-file
+  535  clear
+  536  docker ps
+  537  docker images
+  538  docker history ubuntu
+  539  docker history up-git-apache-file
+  540  cd /var/lib/docker/
+  541  ls
+  542  cd overlay2/
+  543  clear
+  544  ls
+  545  find . -name devopsschool.py
+  546  docker ps
+  547  docker stop e797ed7d7709
+  548  docker rm e797ed7d7709
+  549  cleart
+  550  clear
+  551  find . -name devopsschool.py
+  552  docker images
+  553  docker history up-git-apache-file
+  554  ls
+  555  du -sh 5dff65af7fb5c3dae6a5d34ded43013817755f9ae1abfcf97d7d848ae84c3b4f
+  556  cd 5dff65af7fb5c3dae6a5d34ded43013817755f9ae1abfcf97d7d848ae84c3b4f
+  557  clear
+  558  ls
+  559  cd diff/
+  560  ls
+  561  tree
+  562  yum install tree -y
+  563  clear
+  564  tree
+  565  ls
+  566  tree -L 2
+
+---------------INSIDER------------------
+apt-get update
+apt-get install git
+apt-get install apache2
+
+---------------------------------
+ 576  docker images
+  577  docker run -itd up-git-apache-file
+  578  docker ps
+  579  docker run -itd ubuntu
+  580  docker ps
+  581  docker exec d6392c931647 git
+  582  docker exec 68d089cfad47 git
+
+
+Method - 2 - Smart way - CI/CD way - Using Dockerfile
+- All Layers in one time.
+
+RULES:
+-----------------
+- You need to write dockerfile
+- you need to write steps in dockerfile. called - instructions.
+- each line ====== one layer
+- New Layer is created from the container of last/previous layer 
+
+------------content of dockerfile-----------------
+FROM ubuntu
+MAINTAINER Rajesh kumar rajesh@devopsschool.com
+ENV APP_HOME=/tmp
+RUN apt-get update
+RUN apt-get install git -y
+RUN touch /tmp/raju.txt
+RUN touch /tmp/raju1.txt
+RUN touch /tmp/raju2.txt
+COPY devopsschool.py /tmp/devopsschool.py
+
+
+
+------------content of dockerfile-----------------
+FROM ubuntu
+MAINTAINER Rajesh kumar rajesh@devopsschool.com
+ENV APP_HOME=/tmp
+RUN apt-get update
+RUN apt-get install git -y
+RUN touch /tmp/raju.txt && touch /tmp/raju1.txt && touch /tmp/raju2.txt
+COPY devopsschool.py /tmp/devopsschool.py
+
+
+
+  616  vi dockerfile
+  617  ls
+  618  clear
+  619  ls
+  620  ls
+  621  docker build -t raju1 .
+------------------
+  621  docker build -f docfile-name -t raju1 .
+----------------------
+  622  clear
+  623  docker images
+  624  docker history raju1
+  625  cd /var/lib/docker/
+  626  clear
+  627  ls
+  628  find . -name raju*
+  629  docker help build
+  630  clear
+  631  ls
+  632  cd
+  633  ls
+  634  cd doc/
+  635  ls
+  636  docker images
+  637  docker run -itd raju1
+  638  docker ps
+  639  docker attach 07d76dbf4646
+  640  docker images
+
+
+
+- CMD
+- ENTRYPOINT
+
+Req - 
+Base - ubuntu
+git - apache2 - update - somefile
+
+
 
 
 
