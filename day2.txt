@@ -205,9 +205,95 @@ How to monitor Containers?
 Assignment?
 How to get a logs written of the docker server in some file?
 
+=========================================================================
+Docker images?
+-----------------------------------------
+- Collection of file systems?
+		rootfs + ufs + appfs + appfs + appfs + appfs
+		(base)
+- 1 COPY of image of get mounted to each container.
+- image name === repo name 
+- repo can be stored in registry
+- Docker images contains multiple file system and each fs we call layer.
+- Base layer is always --- rfs
+- When we create a container - all layers are merged into 1 layer and that get mounted to container.
+- In case of conflict between a layers - top layer always win.
+
+  435  docker ps -a
+  436  docker kill $(docker ps -q)
+  437  docker rm $(docker ps -a -q)
+  438  clear
+  439  docker ps
+  440  docker ps -a
+  441  docker images
+  442  docker rmi jenkins/jenkins ubuntu
 
 
 
+ 444  docker info
+  445  clear
+  446  cd /var/lib/docker
+  447  ls
+  448  cd overlay2
+  449  clear
+  450  docker images
+  451  ls
+  452  du -sh
+  453  docker pull ubuntu
+  454  ls
+  455  docker pull jenkins/jenkins
+  456  clear
+  457  ls
+  458  docker rmi jenkins/jenkins
+  459  lear
+  460  clear
+  461  ls
+  462  docker images
+  463  cd b19beb8e471351b49cdbeb3ad7986b9d3f24cdc8c2319ae0a88a6bfd1b709ce4
+  464  ls
+  465  clear
+  466  ls
+  467  cd diff
+  468  ls
+  469  pwd
+  470  cd .
+  471  cd ..
+  472  ls
+  473  cd ..
+  474  clear
+  475  ls
+  476  docker run -itd ubuntu
+  477  ls
+  478  docker ps
+  479  df -kh
+  480  docker ps
+  481  docker exec eff454994906 touch /tmp/raju.txt
+  482  ls
+  483  clear
+  484  find . -name raju.txt .
+  485  find . -name raju.txt
+  486  ls
+  487  docker ps
+  488  cd ./5a026ed8efd549041ba31ebde8694e2f1f16613d6446cfdca3197720c3cdea7d/diff
+  489  ls
+  490  cd -
+  491  clear
+  492  ls
+  493  df -kh
+  494  docker ps
+  495  docker stop eff454994906
+  496  df -kh
+  497  ls
+  498  find . -name raju.txt
+  499  docker start eff454994906
+  500  find . -name raju.txt
+  501  df -kh
+  502  clear
+  503  ls
+
+Assignment....
+Title - Define a docker image in 10 bullets points.
+Share a post with me.
 
 
 
