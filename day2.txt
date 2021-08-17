@@ -486,13 +486,49 @@ Step 5 - docker push
   676  docker push devopsschools/tuesaug:v2
   677  docker images
   678  history
+================================================================
+FROM 			DONE
+MAINTAINER		DONE
+ENV 			DONE
+RUN 			DONE
+COPY 			DONE
+ADD			- work with Compressed file and extract in desired location		
+EXPOSE 			INFORMING USER ABOUT PORT USED IN APP.
+ARG			- Set a var=value in the dockerfile
+USER			Set a user for container
+WORKDIR			set a default work dir for user
+VOLUME			Create a VOL and Attached to container
+LABEL 			label a ANY CONTENT
+------------------------------
+CMD
+ENTRYPOINT
+------------------------------
+How to set PID1???
+- CMD
+- ENTRYPOINT
 
+CMD VS ENTRYPOINT
+----------------------------------
+CMD can be replaced during run time
+ENTRYPOINT can NOT be replaced during run time
+-----------------------------------
+When you use CMD - paramter passed is a replacement
+When you use ENTRYPOINT - paramter passed is a addition to ENTRYPOINT.
+----------------------------------------------
+/sbin/tini -- /usr/local/bin/jenkins.sh hhhhhhh 
+===========================================================
+Assignment of Dockerfile cmd and entrypoint
+Title - Complete referenece of dockerfile cmd and entrypoint
 
-
-
-
-
-
+- What is the benefit of using CMD?
+- What is the benefit of using ENTRYPOINT?
+- Compare CMD vs Entrypoint with 5 Bullets points in tablular format
+- What happens When i specify 2 CMD in one dockerfile?
+- What happens When i specify 2 ENTRYPOINT in one dockerfile?
+- What happens When i specify 1 ENTRYPOINT & 1 CMD in one dockerfile?
+- What is the differenece between exec mode and shell mode?
+- Run these 5 dockerfile and experience a docker image
+- https://devopsschool.com/tutorial/docker/dockerfile/dockerfile-example-sample-lab.html
 
 
 
