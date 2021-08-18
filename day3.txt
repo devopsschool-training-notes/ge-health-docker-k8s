@@ -277,16 +277,112 @@ connect
   570  docker run -itd --net=none ubuntu
   571  history
 
+=================================================================================
+Docker Compose
+--------------------
+	its tool
+	WHy?
+	- Ease your working exp with Container
+------------------------------------------
+	docker-compose
+	- Read a yaml file (docker-compose.yaml)
+		- Contains
+		----------------------------------------
+		Service(S)
+			Service1 aka web
+			- image: imagename
+			- net
+			- port
+			- volume
+			- env
+			- build: dockerfile
+			
+			Service2 aka app
+			- image: imagename
+			- net
+			- port
+			- volume
+			- env
+			- build: dockerfile
+
+			Service3 aka db
+			- image: imagename
+			- net
+			- port
+			- volume
+			- env
+			- build: dockerfile
+----------------------------------------------------------
+		docker-compose up
+		-- build image
+		-- create cont
+		-- start
+		---
+
+
+version: '2'
+services:
+  wordpress:
+    image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    ports:
+      - 80:80 # change ip if required
+    volumes:
+      - ./wp-app:/var/www/html # Full wordpress project
+      #- ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name # Plugin development
+      #- ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name # Theme development
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: password
+    depends_on:
+      - db
+    networks:
+      - wordpress-network
+  db:
+    image: mysql:5.5 # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    ports:
+      - 127.0.0.1:3306:3306 # change ip if required
+    volumes:
+      - ./wp-data:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: password
+    networks:
+      - wordpress-network
+networks:
+  wordpress-network:
+      driver: bridge
 
 
 
 
 
-
-
-
-
-
+ 354  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  355   sudo chmod +x /usr/local/bin/docker-compose
+  356   sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  357  docker-compose --version
+  358  cd
+  359  mkr compose
+  360  mkdir compose
+  361  clear
+  362  ls
+  363  cd compose/
+  364  ls
+  365  vi docker-compose.yaml
+  366  more docker-compose.yaml
+  367  clear
+  368  docker-compose up -d
+  369  clear
+  370  docker-compose ps
+  371  docker-compose stop
+  372  docker-compose ps
+  373  docker-compose logs
+  374  clear
+  375  docker-compose start
+  376  docker-compose ps
+  377  docker-compose kill
+  378  docker-compose rm
 
 
 
