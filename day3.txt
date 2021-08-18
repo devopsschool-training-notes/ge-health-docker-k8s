@@ -384,10 +384,44 @@ networks:
   377  docker-compose kill
   378  docker-compose rm
 
+==========================k8=================================
+===========================================================
+Master
+- Api server 		-> POD -> Container -> Docker image --> Google Registry
+- Etcd			-> POD -> Container -> Docker image --> Google Registry
+- Controller mgmr	-> POD -> Container -> Docker image --> Google Registry
+- Schedular		-> POD -> Container -> Docker image --> Google Registry
+- kubelet
+- docker	
+- kube proxy		-> POD -> Container -> Docker image --> Google Registry
+- kubectl
+- kubeadm 
+
+Worker
+- kubelet
+- docker
+- kube proxy		-> POD -> Container -> Docker image --> Google Registry
+- kubectl
+- kubeadm 
+
+Workstation
+- kubectl
 
 
 
 
+
+===========================================================
+https://github.com/kelseyhightower/kubernetes-the-hard-way
+
+========================================================
+Assignment
+---------------------------
+Write a 2 Post on BestDevOps.com..
+
+Title - What is the architecture and components of Kubernetes?
+		- USE IMAGE FOR THIS to represent your understanding.
+Title - What is POD? define in 15 bullets points
 
 
 
