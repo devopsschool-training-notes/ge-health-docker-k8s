@@ -1,0 +1,318 @@
+
+subhash.choudhary@ge.com		65.0.45.216	
+john.a@ge.com				65.0.107.86	
+niketa.agarwal@ge.com			13.232.195.209	
+Ranjan.KP@ge.com			13.233.147.46	
+adhithyan.s@ge.com			65.0.87.238	
+samir.mewada@geind.ge.com		13.127.192.57
+saurav.kumar12@ge.com			15.207.109.170
+chekkizharpandiyan@ge.com		15.207.115.87
+Prateek.Kembhavi@ge.com			3.108.234.245
+karthikkumar.sathyanarayana@ge.com	65.1.94.12	
+parul.arora@ge.com			13.127.250.154	
+pabitra.lenka@ge.com			13.233.29.94
+Prema					65.0.131.213
+Amit					13.126.170.52	
+=============================================================
+
+Docker Volume
+-------------
+Docker Networking
+--------------
+==============================================================
+Prb with Container?
+-----------------------------------------
+Containers are emph*
+----
+	Data should be persisted?
+How??
+----------------------------------
+docker volume
+------------------------
+	- volume	- /var/lib/docker/volumes
+	- mountfs	- ANY PLACE IN HOST MACHINE
+	- tmpfs		- with memory
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+ 352  cd /var/lib/docker/
+  353  ls
+  354  cd volumes/
+  355  pwd
+  356  ls
+  357  cd 151d62532849b6ea5e3be83a20fabcd838f03ec0845a632d033c1b31f43a72b0
+  358  ls
+  359  cd _data/
+  360  ls
+  361  clear
+  362  s
+  363  ls
+  364  clear
+  365  ls
+  366  cd ..
+  367  ls
+  368  cd ..
+  369  ls
+  370  clear
+  371  ls
+  372  cd
+  373  lc
+  374  ealr
+  375  clear
+  376  docker help
+  377  clear
+  378  docker volume -h
+  379  docker volume ls
+  380  docker volume prune
+  381  clear
+  382  docker volume ls
+  383  docker volume create dev
+  384  docker volume create qa
+  385  clear
+  386  docker volume ls
+  387  docker volume create temp
+  388  docker volume ls
+  389  docker volume rm test
+  390  docker volume rm temp
+  391  clear
+  392  docker volume ls
+  393  cd /var/lib/docker/volumes/
+  394  ls
+  395  cd dev/
+  396  ls
+  397  cd _data/
+  398  ls
+  399  clear
+  400  ls
+  401  cd
+  402  ls
+  403  docker run -h
+  404  docker help run
+  405  clear
+  406  docker run -itd -v dev:/tmp/raju ubuntu
+  407  docker ps
+  408  docker exec e0af3787af35 df -kh
+  409  docker exec e0af3787af35 touch /tmp/raju/raju1.txt
+  410  docker exec e0af3787af35 touch /tmp/raju/raju2.txt
+  411  docker exec e0af3787af35 ls /tmp/raju
+  412  cd /var/lib/docker/
+  413  ls
+  414  cd volumes/
+  415  clear
+  416  ls
+  417  cd dev/
+  418  ls
+  419  cd _data/
+  420  ls
+  421  touch raju3.txt
+  422  docker exec e0af3787af35 ls /tmp/raju
+  423  docker ps
+  424  docker stop e0af3787af35
+  425  docker rm e0af3787af35
+  426  docker ps
+  427  docker volume ls
+  428  clear
+  429  ls
+  430  pwd
+  431  docker run -itd -v dev:/tmp/raju ubuntu
+  432  docker p
+  433  docker ps
+  434  docker exec 297cb44d0cc5 ls /tmp/raju
+  435  docker run -itd -v dev:/tmp/raju ubuntu
+  436  docker ps
+  437  docker exec bb79e6dfc954 ls /tmp/raju
+  438  clear
+  439  docker run -itd -v dev:/tmp/raju -v qa:/tmp/raju1 ubuntu
+  440  docker ps
+  441  docker exec cf9b060e112c ls /
+  442  docker exec cf9b060e112c ls /tmp
+  443  clear
+  444  df -kh
+  445  clear
+  446  cd
+  447  ls
+  448  cd /opt/
+  449  ls
+  450  mkdir bcp
+  451  cd bcp/
+  452  clear
+  453  ls
+  454  pwd
+  455  pwd
+  456  docker run -itd -v /opt/bcp:/tmp/raju1 ubuntu
+  457  docker ps
+  458  docker exec ef3a93a0da47 ls /tmp
+  459  docker exec ef3a93a0da47 touch /tmp/raju1/rrrr
+  460  ls
+  461  touch fdsfddsfs
+  462  docker exec ef3a93a0da47 ls /tmp
+  463  docker exec ef3a93a0da47 ls /tmp/raju1
+  464  clear
+  465  pwd
+  466  docker run -itd -v /opt/bcp:/tmp/ ubuntu
+  467  docker ps
+  468  docker exec f5e27991619b ls /tmp
+  469  ls
+  470  touch fsdfsd
+  471  ls
+  472  docker exec f5e27991619b ls /tmp
+  473  docker exec -it  f5e27991619b /bin/bash
+  474  ls
+  475  pwd
+  476  cd ..
+  477  cd -
+  478  ls
+  479  docker exec f5e27991619b ls /tmp
+  480  clear
+  481  ls
+  482  pwd
+  483  docker exec f5e27991619b ls /tmp
+  484  docker run -itd -v /opt/bcp:/tmp/ ubuntu
+  485  docker ps
+  486  docker exec 8e5ec11b236f ls /tmp
+  487  touch fsdfdsf
+  488  docker exec 8e5ec11b236f ls /tmp
+  489  clear
+  490  ifconfig
+  491  clear
+  492  docker ps -a
+  493  docker kill $(docker ps -q)
+  494  docker rm $(docker ps -a -q)
+
+
+==========================================================
+Container Networking
+==========================================================
+How each container talk to each other but in the same HOST?
+- BRIDGE
+
+TYPE of Network
+------------------
+	bridge
+	host
+	-------
+	none
+	-------
+
+
+connect 
+	----> BRIDGE(Default)
+	----> DIFF BRIDGE(dev)
+	----> Connect to HOST network
+
+ 495  clear
+  496  docker ps -a
+  497  ifconfig
+  498  clear
+  499  docker run -itd ubuntu
+  500  docker ps
+  501  ifconfig
+  502  docker ps
+  503  docker inspect 84c4e93ec77d
+  504  ping 172.17.0.2
+  505  clear
+  506  docker help run
+  507  c
+  508  clear
+  509  docker help
+  510  c;ear
+  511  clear
+  512  docker network
+  513  docker network ls
+  514  ifconfig
+  515  clear
+  516  ifconfig
+  517  clear
+  518  docker run -itd ubuntu
+  519  ifconfig
+  520  docker ps
+  521  clear
+  522  docker ps
+  523  docker attach 07e6e4f4e548
+  524  ls
+  525  docker network
+  526  docker network create dev
+  527  docker network ls
+  528  clear
+  529  docker network ls
+  530  docker inspect 20eb868acd38
+  531  clear
+  532  docker network ls
+  533  docker run -itd --net=dev ubuntu
+  534  docker ps
+  535  docker inspect 07e6e4f4e548
+  536  clear
+  537  docker ps
+  538  docker inspect c187e0b58187
+  539  clear
+  540  docker ps
+  541  docker network
+  542  docker network connect 07e6e4f4e548 dev
+  543  docker network connect dev 07e6e4f4e548
+  544  clear
+  545  docker inspect 07e6e4f4e548
+  546  docker attach "172.17.0.3",
+  547  docker attach 07e6e4f4e548
+  548  c
+  549  clear
+  550  ls
+  551  history
+  552  docker network
+  553  clear
+  554  docker ps
+  555  docker stop c187e0b58187 07e6e4f4e548 84c4e93ec77d
+  556  docker rm c187e0b58187 07e6e4f4e548 84c4e93ec77d
+  557  clear
+  558  ifconfig
+  559  clear
+  560  docker network ls
+  561  docker run -itd --net=host ubuntu
+  562  docker ps
+  563  docker inspect c72103d70d2e
+  564  clear
+  565  docker ps
+  566  docker attach c72103d70d2e
+  567  c
+  568  clear
+  569  docker network ls
+  570  docker run -itd --net=none ubuntu
+  571  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
