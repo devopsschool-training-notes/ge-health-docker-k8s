@@ -1,0 +1,230 @@
+-----------------------------------
+
+
+
+
+Master + Workstation
+- 3.109.157.47
+
+
+Worker
+- 3.108.217.248
+- 35.154.63.254
+
+---------UB------------
+15.207.14.10
+15.207.88.224
+
+-----------------------------------
+How to setup k8 clustor?
+-------------------------------------
+Self Hosted
+- You are the k8s admin
+- INFRA + PLATFORM(k8) -- Taken care by you
+-------------------------
+minikube --- SINGLE VMS for learning purpose
+	- kubeadm
+kops	--- Prod ready k8s clus on CLoud(aws + vmware + azure + gc)
+	- kubeadm
+
+Manual way using kubeadm
+
+
+Hosted
+- You are not the k8s admin
+- INFRA + PLATFORM(k8) -- Taken care by service provider
+
+AWS 	-> EKS
+GC	-> GKE
+AZURE	-> AKS
+
+https://www.devopsschool.com/blog/setting-up-kubernetes-clusters-using-kubeadm-manual-way-in-rhel-7-centos7/
+
+======================================================================
+======================================================================
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 172.31.15.175:6443 --token hz4kpd.ai6jmruh7wbybi2r \
+        --discovery-token-ca-cert-hash sha256:b41023b7b27d809a0666c799d3bd11680a279662280a7ba4dce2b884dd0034ed
+
+======================================================================
+======================================================================
+
+What do you want??? 
+============================================
+I DONT KNOW
+----------------------
+
+[centos@ip-172-31-15-175 ~]$ kubectl api-resources
+NAME                              SHORTNAMES   APIVERSION                             NAMESPACED   KIND
+bindings                                       v1                                     true         Binding
+componentstatuses                 cs           v1                                     false        ComponentStatus
+configmaps                        cm           v1                                     true         ConfigMap
+endpoints                         ep           v1                                     true         Endpoints
+events                            ev           v1                                     true         Event
+limitranges                       limits       v1                                     true         LimitRange
+namespaces                        ns           v1                                     false        Namespace
+nodes                             no           v1                                     false        Node
+persistentvolumeclaims            pvc          v1                                     true         PersistentVolumeClaim
+persistentvolumes                 pv           v1                                     false        PersistentVolume
+pods                              po           v1                                     true         Pod
+podtemplates                                   v1                                     true         PodTemplate
+replicationcontrollers            rc           v1                                     true         ReplicationController
+resourcequotas                    quota        v1                                     true         ResourceQuota
+secrets                                        v1                                     true         Secret
+serviceaccounts                   sa           v1                                     true         ServiceAccount
+services                          svc          v1                                     true         Service
+mutatingwebhookconfigurations                  admissionregistration.k8s.io/v1        false        MutatingWebhookConfiguration
+validatingwebhookconfigurations                admissionregistration.k8s.io/v1        false        ValidatingWebhookConfiguration
+customresourcedefinitions         crd,crds     apiextensions.k8s.io/v1                false        CustomResourceDefinition
+apiservices                                    apiregistration.k8s.io/v1              false        APIService
+controllerrevisions                            apps/v1                                true         ControllerRevision
+daemonsets                        ds           apps/v1                                true         DaemonSet
+deployments                       deploy       apps/v1                                true         Deployment
+replicasets                       rs           apps/v1                                true         ReplicaSet
+statefulsets                      sts          apps/v1                                true         StatefulSet
+tokenreviews                                   authentication.k8s.io/v1               false        TokenReview
+localsubjectaccessreviews                      authorization.k8s.io/v1                true         LocalSubjectAccessReview
+selfsubjectaccessreviews                       authorization.k8s.io/v1                false        SelfSubjectAccessReview
+selfsubjectrulesreviews                        authorization.k8s.io/v1                false        SelfSubjectRulesReview
+subjectaccessreviews                           authorization.k8s.io/v1                false        SubjectAccessReview
+horizontalpodautoscalers          hpa          autoscaling/v1                         true         HorizontalPodAutoscaler
+cronjobs                          cj           batch/v1                               true         CronJob
+jobs                                           batch/v1                               true         Job
+certificatesigningrequests        csr          certificates.k8s.io/v1                 false        CertificateSigningRequest
+leases                                         coordination.k8s.io/v1                 true         Lease
+endpointslices                                 discovery.k8s.io/v1                    true         EndpointSlice
+events                            ev           events.k8s.io/v1                       true         Event
+flowschemas                                    flowcontrol.apiserver.k8s.io/v1beta1   false        FlowSchema
+prioritylevelconfigurations                    flowcontrol.apiserver.k8s.io/v1beta1   false        PriorityLevelConfiguration
+ingressclasses                                 networking.k8s.io/v1                   false        IngressClass
+ingresses                         ing          networking.k8s.io/v1                   true         Ingress
+networkpolicies                   netpol       networking.k8s.io/v1                   true         NetworkPolicy
+runtimeclasses                                 node.k8s.io/v1                         false        RuntimeClass
+poddisruptionbudgets              pdb          policy/v1                              true         PodDisruptionBudget
+podsecuritypolicies               psp          policy/v1beta1                         false        PodSecurityPolicy
+clusterrolebindings                            rbac.authorization.k8s.io/v1           false        ClusterRoleBinding
+clusterroles                                   rbac.authorization.k8s.io/v1           false        ClusterRole
+rolebindings                                   rbac.authorization.k8s.io/v1           true         RoleBinding
+roles                                          rbac.authorization.k8s.io/v1           true         Role
+priorityclasses                   pc           scheduling.k8s.io/v1                   false        PriorityClass
+csidrivers                                     storage.k8s.io/v1                      false        CSIDriver
+csinodes                                       storage.k8s.io/v1                      false        CSINode
+csistoragecapacities                           storage.k8s.io/v1beta1                 true         CSIStorageCapacity
+storageclasses                    sc           storage.k8s.io/v1                      false        StorageClass
+volumeattachments                              storage.k8s.io/v1                      false        VolumeAttachment
+[centos@ip-172-31-15-175 ~]$
+
+
+
+
+==========================================================================================================
+How can i use?
+--------------------------------
+HTTP - PUT - GET - POST - DELETE 
+
+CRUD
+-------------------------
+CREATE
+	cmd	
+		create
+	yaml
+		create -f 
+READ
+	cmd
+		get
+		describe
+	yaml
+		get -f 
+UPDATE
+	cmd
+		edit
+	yaml
+		apply -f 
+DELETE	
+	cmd
+		delete
+	yaml
+		delete -f 
+================================================================================
+What do you want???/
+Namespace
+POD
+ReplicationController
+Deployment
+
+
+  8  clear
+    9  kubectl get nodes
+   10  clear
+   11  ls
+   12  kubectl get nodes
+   13  clear
+   14  kubectl get nodes
+   15  kubectl
+   16  kubectl cluster-info
+   17  clear
+   18  kubectl
+   19  clear
+   20  kubectl api-resources
+   21  kubectl
+   22  kubectl  api-versions
+   23  clear
+   24  kubectl get ns
+   25  kubectl get pods -n=kube-system
+   26* kubectl get pod
+   27  kubectl get pods -n=kube-public
+   28  clear
+   29  kubectl
+   30  clear
+   31  kubectl get ns
+   32  kubectl create ns dev
+   33  kubectl get ns
+   34  kubectl create ns qa
+   35  kubectl create ns prod1
+   36  kubectl create ns qa
+   37  kubectl get ns
+   38  kubectl describe ns dev
+   39  clear
+   40  kubectl edit ns dev
+   41  kubectl describe ns dev
+   42  clear
+   43  kubectl get ns
+   44  kubectl delete ns dev
+   45  kubectl get ns
+   46  history
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
