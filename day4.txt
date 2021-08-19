@@ -210,9 +210,60 @@ Deployment
    45  kubectl get ns
    46  history
 
+=====================
+POD
 
 
 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodehelloworld.example.com
+  labels:
+    app: helloworld
+spec:
+  containers:
+  - name: devopsschool1
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+
+ 53  mkdir rajesh
+   54  ls
+   55  cd rajesh/
+   56  clear
+   57  vi pod.yaml
+   58  clear
+   59  ls
+   60  kubectl create ns rajesh
+   61  kubectl apply -f pod.yaml -n=rajesh
+   62  kubectl get pods
+   63  kubectl get pods -n=rajesh
+   64  kubectl get pods -n=rajesh -o wide
+   65  kubectl describe pod nodehelloworld.example.com -n=rajesh
+   66  clear
+   67  ls
+   68  kubectl get pods -n=rajesh -o wide
+   69  kubectl get pods -n=rajesh
+   70  kubectl edit pod nodehelloworld.example.com -n=rajesh
+   71* kubectl describe pod nodehelloworld.example.com -n=
+   72  clear
+   73  kubectl get pods -n=rajesh --show-lables
+   74  kubectl get pods -n=rajesh --show-labels
+   75  kubectl get pods -h
+   76  clear
+   77  ls
+   78  vi pod.yaml
+   79  kubectl apply -f pod.yaml -n=rajesh
+   80  kubectl get pods -n=rajesh --show-labels
+   81  kubectl delete pod nodehelloworld.example.com -n=rajesh
+   82  kubectl apply -f pod.yaml -n=rajesh
+   83  kubectl delete -f pod.yaml -n=rajesh
+   84  kubectl apply -f pod.yaml -n=rajesh
+   85  kubectl get pods -o wide
+   86  kubectl get pods -o wide -n=rajesh
+   87  curl http://10.44.0.1
 
 
 
