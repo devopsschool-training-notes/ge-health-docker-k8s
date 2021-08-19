@@ -380,5 +380,106 @@ spec:
   408  kubectl delete -f rc.yaml -n=rajesh
 
 
+kubectl taint node ip-172-31-15-175.ap-south-1.compute.internal node-role.kubernetes.io/master:NoSchedule-
+============================================
+Deployment
+------------------------
+Replication
+Controller
+
+Versioning
+Rollout
+	Strategy
+Rollback
+	Strategy
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+
+https://www.bestdevops.com/working-with-kubernetes-deployment-with-example/
+https://www.bestdevops.com/working-with-kubernetes-deployment-with-example/
+
+v1
+v2
+v3
+
+https://www.devopsschool.com/blog/kubernetes-deployment-strategy-explained-with-example/
+
+  414  ls
+  415  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 -n=rajesh
+  416  kubectl get deploy -n=rajesh
+  417  kubectl scale --replicas=5 deploy/my-dep -n=rajesh
+  418  kubectl get deploy -n=rajesh
+  419  kubectl get pods -n=rajesh
+  420  kubectl delete pod my-dep-747b4ffb56-bknxb my-dep-747b4ffb56-fkgpk my-dep-747b4ffb56-m6q7d -n=rajesh
+  421  kubectl get pods -n=rajesh
+  422  clear
+  423  ls
+  424  kubectl get deploy -n=rajesh
+  425  kubectl delete deploy my-dep -n=rajesh
+  426  kubectl get deploy -n=rajesh
+  427  clear
+  428  kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=5
+  429  kubectl rollout history deploy/my-dep
+  430  kubectl rollout status deploy/my-dep
+  431  kubectl get pods -o wide
+  432  curl http://10.32.0.5
+  433  kubectl edit deploy/my-dep
+  434  kubectl rollout history deploy/my-dep
+  435  kubectl rollout status deploy/my-dep
+  436  clear
+  437  kubectl get pods -o wide
+  438  curl http://10.32.0.4
+  439  kubectl rollout history deploy/my-dep
+  440  kubectl rollout undo deploy/my-dep --to-revision=1
+  441  kubectl rollout status deploy/my-dep
+  442  clear
+  443  kubectl get pods -o wide
+  444  curl http://10.32.0.4
+  445  clear
+  446  ls
+  447  kubectl get deploy
+  448  kubectl describe deploy my-dep -n=rajesh
+  449  kubectl describe deploy my-dep
+  450  clear
+  451  kubectl deploy
+  452  kubectl get deploy
+  453  kubectl get deploy my-dep
+  454  kubectl get deploy my-dep -o yaml --export
+  455  kubectl get deploy my-dep -dry-run
+  456  kubectl get -h
+  457  clear
+  458  kubectl create deployment demo --image=adhi2255/demo --dry-run -o=yaml > deployment.yaml
+  459  ls
+  460  more deployment.yaml
+  461  clear
+  462  kubectl get deploy my-dep -o yaml
+  463  clear
+  464  kubectl get deploy my-dep -o yaml >> dep.yaml
+  465  vi dep
+  466  vi dep.yaml
+  467  more dep
+  468  more dep.yaml
+  469  clkear
+  470  history
+
+
+
+https://www.devopsschool.com/blog/list-of-popular-deployment-strategies/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
