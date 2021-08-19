@@ -264,12 +264,67 @@ spec:
    85  kubectl get pods -o wide
    86  kubectl get pods -o wide -n=rajesh
    87  curl http://10.44.0.1
+=========================================================================================
+
+Troubleshooting and Debugging Commands:
+  describe      Show details of a specific resource or group of resources
+  logs          Print the logs for a container in a pod
+  attach        Attach to a running container
+  exec          Execute a command in a container
+  port-forward  Forward one or more local ports to a pod
+  cp            Copy files and directories to and from containers
+  auth          Inspect authorization
 
 
-
-
-
-
+  137  vi pod1.yaml
+  138  clear
+  139  kubectl apply -f pod1.yaml -n=rajesh
+  140  vi pod1.yaml
+  141  clear
+  142  kubectl apply -f pod1.yaml -n=rajesh
+  143  kubectl get pods -n=rajesh
+  144  kubectl describe pod nodehelloworld.example.com1 -n=rajesh
+  145  clear
+  146  kubectl logs nodehelloworld.example.com -n=rajesh -c=devopsschool2
+  147  kubectl logs nodehelloworld.example.com -n=rajesh -c devopsschool2
+  148  kubectl logs nodehelloworld.example.com1 -n=rajesh -c devopsschool2
+  149  clear
+  150  kubectl attach nodehelloworld.example.com1 -n=rajesh -c devopsschool
+  151  kubectl attach nodehelloworld.example.com1 -n=rajesh -c devopsschool1
+  152  clear
+  153  kubectl get pods -n=rajesh
+  154  kubectl exec nodehelloworld.example.com1 ls
+  155  kubectl exec nodehelloworld.example.com1 ls -n=rajesh
+  156  kubectl exec nodehelloworld.example.com1 ls -n=rajesh -c=devopsschool2
+  157  clear
+  158  kubectl exec -it  nodehelloworld.example.com1 ls -n=rajesh /bin/bash
+  159  kubectl exec -it  nodehelloworld.example.com1 ls -n=rajesh /bin/bash -c devopsschool1
+  160  kubectl exec -it  nodehelloworld.example.com1  /bin/bash -n=rajesh  -c devopsschool1
+  161  kubectl get pods -o wide -n=rajesh
+  162  curl http://10.44.0.3
+  163  kubectl port-forward -h
+  164  clear
+  165  kubectl get pods -o wide -n=rajesh
+  166  kubectl port-forward -h
+  167  clear
+  168  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com1 -n=rajesh 80:80
+  169  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com -n=rajesh 80:80
+  170  kubectl port-forward -h
+  171  clear
+  172  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 80:80 -n=rajesh
+  173  kubectl port-forward --address 0.0.0.0 pod/nodehelloworld.example.com 8080:80 -n=rajesh
+  174  ks
+  175  clear
+  176  ls
+  177  kubectl get pods -n=rajesh
+  178  kubectl cp pod1.yaml nodehelloworld.example.com:/tmp -n=rajesh
+  179  kubectl exec nodehelloworld.example.com -n=rajesh ls /tmp
+  180  kubectl auth
+  181  kubectl auth can-i create pod
+  182  kubectl auth can-i create ns
+  183  kubectl auth can-i create node
+  184  kubectl auth can-i create service
+  185  kubectl auth can-i delete pod
 
 
 
