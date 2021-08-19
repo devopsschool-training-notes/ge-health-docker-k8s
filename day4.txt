@@ -325,11 +325,59 @@ Troubleshooting and Debugging Commands:
   183  kubectl auth can-i create node
   184  kubectl auth can-i create service
   185  kubectl auth can-i delete pod
+===========================================================================================
+===========================================================================================
+ReplicationController
+=======================================
+Replication - You can replicate multiple POD
+Controller - it would control your DESIRE
 
 
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  # Unique key of the ReplicationController instance
+  name: replicationcontroller-example
+spec:
+  # 3 Pods should exist at all times.
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      # Run the nginx image
+      - name: nginx
+        image: scmgalaxy/nginx-devopsschoolv1
 
 
-
+ 383  vi rc.yaml
+  384  kubectl create -f rc.yaml -n=rajesh
+  385  kubectl get pods -n=rajesh
+  386  kubectl get rc
+  387  kubectl get rc -n=rajesh
+  388  kubectl describe rc replicationcontroller-example -n=rajesh
+  389  clear
+  390  kubectl get rc -n=rajesh
+  391  kubectl edit rc replicationcontroller-example =n=rajesh
+  392  kubectl edit rc replicationcontroller-example -n=rajesh
+  393  kubectl get rc -n=rajesh
+  394  kubectl edit rc replicationcontroller-example -n=rajesh
+  395  kubectl get rc -n=rajesh
+  396  clear
+  397  kubectl get rc -n=rajesh
+  398  kubectl get pods-n=rajesh
+  399  kubectl get pods -n=rajesh
+  400  kubectl scale -h
+  401  clear
+  402  kubectl scale --replicas=3 -f rc.yaml -n=rajesh
+  403  kubectl get pods -n=rajesh
+  404  clear
+  405  kubectl get pods -n=rajesh
+  406  kubectl delete pod replicationcontroller-example-6bpms replicationcontroller-example-cpx4r -n=rajesh
+  407  kubectl get pods -n=rajesh
+  408  kubectl delete -f rc.yaml -n=rajesh
 
 
 
