@@ -112,8 +112,9 @@ https://www.devopsschool.com/blog/persistentvolume-persistentvolumeclaim-volumes
 https://www.devopsschool.com/blog/kubernetes-persistentvolume-and-persistentvolumeclaim-using-nfs-volume-types/
 
 
+================================
+https://www.devopsschool.com/blog/understanding-authentication-authorization-in-kubernetes/
 
 
-
-
+https://www.devopsschool.com/blog/understanding-authentication-authorization-in-kubernetes/
 
