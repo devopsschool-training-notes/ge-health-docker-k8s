@@ -32,3 +32,57 @@
  1052  curl http://10.109.29.226:5678
  1053  clear
  1054  watch curl http://10.109.29.226:5678
+===================================================================
+
+
+
+kubectl create deployment my-dep --image=scmgalaxy/nginx-devopsschoolv1 --replicas=5
+kubectl expose deploy my-dep --port=80 --target-port=80
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+
+Types of Service
+------------------------
+ClustorIP
+		CREATE A SVC
+		SERVICE WOULD BE ACCESSSIBLE INSIDE A CLUSTOR
+
+NodePort
+		CREATE A ClustorIP SVC
+		SERVICE WOULD BE ACCESSSIBLE INSIDE A CLUSTOR
+
+		SAME SVC can be EXPOSED at EACH NODE OF THE CLUSTOR
+		
+LoadBalancer
+		CREATE A ClustorIP SVC
+		SERVICE WOULD BE ACCESSSIBLE INSIDE A CLUSTOR
+
+		SAME SVC can be EXPOSED at EACH NODE OF THE CLUSTOR
+
+		CRAETE A LB at your cloud
+		ADD all NODE of the Clustor TO THIS LB
+
+
+kubectl expose deploy my-dep --port=80 --target-port=80 --type=NodePort --name=np
+
+
+kubectl expose deploy my-dep --port=80 --target-port=80 --type=LoadBalancer --name=lb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
