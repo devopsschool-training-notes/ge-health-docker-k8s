@@ -117,4 +117,46 @@ https://www.devopsschool.com/blog/understanding-authentication-authorization-in-
 
 
 https://www.devopsschool.com/blog/understanding-authentication-authorization-in-kubernetes/
+==================================
+
+yum -->		install-update-remove	- yum repo	RHEL
+
+apt-get ->	install-update-remove	- apt repo	DEBIAN	
+
+playstore ->	install-update-remove	- google plyastore ANDROID
+---------------------------------------
+helm		install-update-remove	- https://artifacthub.io/	
+		What?
+		--------------
+		Package aka Chart
+		- collection of yaml file in certain fixed structure
+
+
+
+
+
+--------------------ingree
+red.google.com ----->  sevc1
+blue.google.com----> svc
+
+
+name based
+path
+cert
+===================================================
+https://www.devopsschool.com/lms
+rajesh@devopsschool.com
+www.RajeshKumar.xyz
+
+
+
+
+
+
+
+
+
+
+
+
 
