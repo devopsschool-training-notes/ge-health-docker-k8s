@@ -1,0 +1,34 @@
+ 1021  more pod1.yaml pod2.yaml
+ 1022  clear
+ 1023  ls
+ 1024  kubectl apply -f pod1.yaml
+ 1025  kubectl apply -f pod2.yaml
+ 1026  kubectl get pod -o wide
+ 1027  curl http://10.32.0.4
+ 1028  curl http://10.32.0.7
+ 1029  clear
+ 1030  ls
+ 1031  kubectl create -h
+ 1032  clear
+ 1033  kubectl create service -h
+ 1034  kubectl create service clusterip -h
+ 1035  clear
+ 1036  kubectl get svc
+ 1037  kubectl create service clusterip my-cs --tcp=5678:80
+ 1038  kubectl get svc
+ 1039  clear
+ 1040  kubectl get pods --show-labels;kubectl get svc --show-labels
+ 1041  kubectl get pods --show-labels;kubectl get svc --show-labels;kubectl describe svc my-cs
+ 1042  lear
+ 1043  clear
+ 1044  kubectl get pods --show-labels;kubectl get svc --show-labels;kubectl describe svc my-cs
+ 1045  kubectl edit svc my-cs
+ 1046  clear
+ 1047  kubectl get pods --show-labels;kubectl get svc --show-labels;kubectl describe svc my-cs
+ 1048  kubectl edit svc my-cs
+ 1049  clear
+ 1050  kubectl get pods --show-labels;kubectl get svc --show-labels;kubectl describe svc my-cs
+ 1051  curl http://10.109.29.226
+ 1052  curl http://10.109.29.226:5678
+ 1053  clear
+ 1054  watch curl http://10.109.29.226:5678
