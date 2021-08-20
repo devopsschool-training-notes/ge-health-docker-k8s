@@ -70,15 +70,46 @@ kubectl expose deploy my-dep --port=80 --target-port=80 --type=NodePort --name=n
 kubectl expose deploy my-dep --port=80 --target-port=80 --type=LoadBalancer --name=lb
 
 
+API -> STATIC POD - NOT MANAGED BY K8s
+-----------------------
+Local Host --> Service
+
+172.31.15.175:6443 --> OUTSIDE
+
+3.109.157.47:6443
 
 
+https://3.109.157.47:6443/
 
+172.31.15.175:6443 - INSIDE
+10.96.0.1 - INSIDE
 
+=============================================================
+How to have data peristentcy beyond a lifecycle of POD?
+----------------------------------------------------
+Answer - volume
+		---
+		hostpath
+		nfs
+		
+---------------------------
+ADMIN - Manage Clustor
+			Node(CPU+RAM)
+			Storage
+			Access
+	Would make it available a volume
+	- PV
 
+USER
+	- Deploy POD
 
+	- PVC
+	- Attached to POD
+	- mount inside a container
+=========================================================
 
-
-
+https://www.devopsschool.com/blog/persistentvolume-persistentvolumeclaim-volumes-using-hostpath/
+https://www.devopsschool.com/blog/kubernetes-persistentvolume-and-persistentvolumeclaim-using-nfs-volume-types/
 
 
 
